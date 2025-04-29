@@ -1,5 +1,4 @@
 package com.imin.printer.imin_printer;
-
 import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
@@ -231,7 +230,7 @@ public class Utils {
     public String getSystemProperties(String property) {
         String value = "";
         try {
-            Class clazz = Class.forName("android.os.SystemProperties");
+            Class<?> clazz = Class.forName("android.os.SystemProperties");
             Method getter = clazz.getDeclaredMethod("get", String.class);
             value = (String) getter.invoke(null, property);
         } catch (Exception e) {
